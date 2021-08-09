@@ -2,9 +2,9 @@ import React from "react";
 import { Dimensions } from "react-native";
 import { ActivityIndicator, Text, View } from "react-native";
 import Carousel from 'react-native-snap-carousel';
+import MovieCard from "../../components/MovieCard/MovieCard";
+import { useMovies } from "../../hooks/useMovies";
 
-import MovieCard from "../components/MovieCard/MovieCard";
-import { useMovies } from "../hooks/useMovies";
 
 
 const windowWidth = Dimensions.get('window').width
@@ -25,6 +25,8 @@ export default function HomeScreen() {
           itemWidth={300}
         />
       </View>
+
+      
     </View>
   )
 }
