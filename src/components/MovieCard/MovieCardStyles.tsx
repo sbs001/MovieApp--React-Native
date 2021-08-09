@@ -17,12 +17,13 @@ export const MovieCardStyle = StyleSheet.create({
     shadowRadius: 16.00,
     
     elevation: 24,
-
+  },
+  separation:{
+    marginHorizontal:5
   },
 
   image: {
     flex: 1,
     borderRadius: 18,
-
   }
 })
