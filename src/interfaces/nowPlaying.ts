@@ -1,5 +1,5 @@
 
-export interface NowPlaying {
+export interface ApiResponse {
   dates:         Dates;
   page:          number;
   results:       Movie[];

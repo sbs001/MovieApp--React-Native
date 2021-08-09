@@ -3,10 +3,9 @@ import { Dimensions, FlatList } from "react-native";
 import { ActivityIndicator, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Carousel from 'react-native-snap-carousel';
+import HorizontalSlider from "../../components/HorizontalSlider/HorizontalSlider";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import { useMovies } from "../../hooks/useMovies";
-import { HomeStyles } from "./HomeScreenStyles";
-
 
 
 const windowWidth = Dimensions.get('window').width
@@ -29,17 +28,13 @@ export default function HomeScreen() {
           />
         </View>
 
-        <View style={HomeStyles.flatListCtn}>
-          <Text style={HomeStyles.title}>Popular Movies</Text>
-          <FlatList
-            data={moviesNowPlaying}
-            renderItem={({ item }: any) => <MovieCard movie={item} width={140} height={200} />}
-            keyExtractor={(item) => item.id.toString()}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          />
-        </View>
-     
+        <HorizontalSlider title='Popular Movies' movies={moviesNowPlaying} />
+        <HorizontalSlider  movies={moviesNowPlaying} />
+
+        <HorizontalSlider title='Popular Movies' movies={moviesNowPlaying} />
+
+        
+
       </View>
     </ScrollView>
   )

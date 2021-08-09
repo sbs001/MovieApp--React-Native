@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import movieApi from "../api/MovieApi";
-import { Movie, NowPlaying } from "../interfaces/nowPlaying";
+import { ApiResponse, Movie,  } from "../interfaces/nowPlaying";
 
 
 export const useMovies = () => {
@@ -10,7 +10,7 @@ export const useMovies = () => {
   const [moviesNowPlaying, setMoviesNowPlaying] = useState<Movie[]>([])
 
   const getMovies = async () => {
-    setMoviesNowPlaying((await movieApi.get<NowPlaying>('/now_playing')).data.results);
+    setMoviesNowPlaying((await movieApi.get<ApiResponse>('/now_playing')).data.results);
     setLoading(false);
   }
 
