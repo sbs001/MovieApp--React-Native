@@ -1,5 +1,6 @@
 import React from "react";
 import { ActivityIndicator, Text, View } from "react-native";
+import MovieCard from "../components/MovieCard/MovieCard";
 import { useMovies } from "../hooks/useMovies";
 
 export default function HomeScreen() {
@@ -10,7 +11,7 @@ export default function HomeScreen() {
 
   return (
     <View>
-      <Text>Home</Text>
+      <MovieCard movie={moviesNowPlaying[0]} />
     </View>
   )
 }
