@@ -1,16 +1,12 @@
 import React from "react";
-import { useEffect } from "react";
-import { Text, View } from "react-native";
-import movieApi from "../api/MovieApi";
-import { NowPlaying } from "../interfaces/nowPlaying";
+import { ActivityIndicator, Text, View } from "react-native";
+import { useMovies } from "../hooks/useMovies";
 
-export default function HomeScreen(){
+export default function HomeScreen() {
 
-  useEffect(()=>{
-    movieApi.get<NowPlaying>('/now_playing')
-    .then(res => console.log(res.data))
-  },[]);
+  const { moviesNowPlaying, loading} = useMovies();
 
+  if (loading) return <View><ActivityIndicator color='grey' size={70}/></View>
 
   return (
     <View>
