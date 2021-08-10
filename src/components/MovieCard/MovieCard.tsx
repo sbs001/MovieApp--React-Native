@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { Movie } from '../../interfaces/nowPlaying';
+import { Movie } from '../../interfaces/ApiResponse';
 import { MovieCardStyle } from './MovieCardStyles';
 
 interface Props {

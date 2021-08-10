@@ -6,15 +6,16 @@ import Carousel from 'react-native-snap-carousel';
 import HorizontalSlider from "../../components/HorizontalSlider/HorizontalSlider";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import { useMovies } from "../../hooks/useMovies";
+import { HomeStyles } from "./HomeScreenStyles";
 
 
 const windowWidth = Dimensions.get('window').width
 
 export default function HomeScreen() {
 
-  const { moviesNowPlaying, loading } = useMovies();
+  const { moviesNowPlaying, moviesPopular, moviesUpcoming, moviesTopRated, loading } = useMovies();
 
-  if (loading) return <View><ActivityIndicator color='grey' size={70} /></View>
+  if (loading) return <View style={HomeStyles.loading}><ActivityIndicator color='grey' size={70} /></View>
 
   return (
     <ScrollView>
@@ -28,12 +29,9 @@ export default function HomeScreen() {
           />
         </View>
 
-        <HorizontalSlider title='Popular Movies' movies={moviesNowPlaying} />
-        <HorizontalSlider  movies={moviesNowPlaying} />
-
-        <HorizontalSlider title='Popular Movies' movies={moviesNowPlaying} />
-
-        
+        <HorizontalSlider title='Top Rated' movies={moviesTopRated} />
+        <HorizontalSlider title='Popular Movies' movies={moviesPopular} />
+        <HorizontalSlider title='Upcoming' movies={moviesUpcoming} />
 
       </View>
     </ScrollView>
