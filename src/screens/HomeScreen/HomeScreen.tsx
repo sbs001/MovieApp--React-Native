@@ -1,6 +1,6 @@
 import React from "react";
-import { Dimensions, FlatList } from "react-native";
-import { ActivityIndicator, Text, View } from "react-native";
+import { Dimensions } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Carousel from 'react-native-snap-carousel';
 import HorizontalSlider from "../../components/HorizontalSlider/HorizontalSlider";
@@ -13,7 +13,7 @@ const windowWidth = Dimensions.get('window').width
 
 export default function HomeScreen() {
 
-  const { moviesNowPlaying, moviesPopular, moviesUpcoming, moviesTopRated, loading } = useMovies();
+  const { nowPlaying, popupar, upcoming, top_rated, loading } = useMovies();
 
   if (loading) return <View style={HomeStyles.loading}><ActivityIndicator color='grey' size={70} /></View>
 
@@ -22,16 +22,16 @@ export default function HomeScreen() {
       <View>
         <View style={{ height: 440 }}>
           <Carousel
-            data={moviesNowPlaying}
+            data={nowPlaying}
             renderItem={({ item }: any) => <MovieCard movie={item} />}
             sliderWidth={windowWidth}
             itemWidth={300}
           />
         </View>
 
-        <HorizontalSlider title='Top Rated' movies={moviesTopRated} />
-        <HorizontalSlider title='Popular Movies' movies={moviesPopular} />
-        <HorizontalSlider title='Upcoming' movies={moviesUpcoming} />
+        <HorizontalSlider title='Top Rated' movies={top_rated} />
+        <HorizontalSlider title='Popular Movies' movies={popupar} />
+        <HorizontalSlider title='Upcoming' movies={upcoming} />
 
       </View>
     </ScrollView>
