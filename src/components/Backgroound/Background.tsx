@@ -13,7 +13,7 @@ export default function Background({ children }: Props) {
   return (
     <View style={BackgroundStyle.ctn} >
       <LinearGradient
-       colors={['purple','grey',]}
+       colors={['white','gray']}
         style={{...StyleSheet.absoluteFillObject}}
       />
       {children}
