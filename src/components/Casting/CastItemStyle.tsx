@@ -3,9 +3,13 @@ import { StyleSheet } from "react-native";
 export const CastItemStyle = StyleSheet.create({
 
   ctn: {
-    marginLeft: 10,
+    marginRight: 10,
     flexDirection: 'row',
-    alignItems:'center'
+    alignItems: 'center',
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 5,
+    padding:10
   },
 
   title: {
@@ -13,15 +17,16 @@ export const CastItemStyle = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  character:{
+  character: {
     fontSize: 15,
-    color:'grey'
+    color: 'grey'
   },
 
-  img:{
-    width:70,
-    height:60,
-    margin:10,
-    borderRadius:5,
-  }
+  img: {
+    width: 70,
+    height: 60,
+    marginRight: 10,
+    borderRadius: 5,
+  },
+
 })

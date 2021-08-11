@@ -16,5 +16,9 @@ export const MovieDetailStyle = StyleSheet.create({
   ctn:{
     marginLeft:10,
     marginBottom:50,
+  },
+
+  flatList:{
+    padding:10,
   }
 })

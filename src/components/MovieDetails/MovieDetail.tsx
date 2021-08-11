@@ -35,6 +35,7 @@ export default function MovieDetail({ cast, data }: Props) {
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => <CastItem actor={item} />}
         horizontal
+        style={MovieDetailStyle.flatList}
       />
     </View>
   )

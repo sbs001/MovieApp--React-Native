@@ -18,5 +18,10 @@ export const DetailScreenStyle = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     margin: 10,
+  },
+  backButton:{
+    position:'absolute',
+    top:50,
+    zIndex:100,
   }
 })
