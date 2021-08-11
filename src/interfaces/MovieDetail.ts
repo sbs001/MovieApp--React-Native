@@ -12,7 +12,7 @@ export interface MovieDetailFull {
   original_title:        string;
   overview:              string;
   popularity:            number;
-  poster_path:           null;
+  poster_path:           string;
   production_companies:  ProductionCompany[];
   production_countries:  ProductionCountry[];
   release_date:          string;
@@ -45,6 +45,7 @@ export interface ProductionCountry {
 }
 
 export interface SpokenLanguage {
-  iso_639_1: string;
-  name:      string;
+  english_name: string;
+  iso_639_1:    string;
+  name:         string;
 }

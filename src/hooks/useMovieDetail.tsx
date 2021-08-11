@@ -6,24 +6,28 @@ import { MovieDetailFull } from "../interfaces/MovieDetail"
 
 interface MovieDetail {
   loading: boolean,
-  data?: MovieDetailFull,
+  detail?: MovieDetailFull,
   cast?: Cast[]
 
 }
 
 export const useMovieDetail = (id: number) => {
 
-  const [detail, setDetail] = useState<MovieDetail>({ loading: true })
+  const [details, setDetails] = useState<MovieDetail>({loading:true})
+
+  const getDetails = async() =>{
+    setDetails({
+      detail: (await movieApi.get<MovieDetailFull>(`/${id}`)).data,
+      cast:  (await movieApi.get<MovieCredits>(`/${id}/credits`)).data.cast,
+      loading:false,
+    })
+  }
 
   useEffect(() => {
-
-    movieApi.get<MovieDetailFull>('/' + id)
-      .then(res => setDetail({ ...detail, data: res.data }))
-      .then(() => movieApi.get<MovieCredits>(`/${id}/credits`))
-      .then(res => setDetail({ ...detail, loading: false, cast: res.data.cast }))
+    getDetails();
   }, [])
 
   return {
-    detail
+    ...details
   }
 }
