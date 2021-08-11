@@ -13,9 +13,8 @@ export default function Background({ children }: Props) {
   return (
     <View style={BackgroundStyle.ctn} >
       <LinearGradient
-       colors={['gray','black','white']}
+       colors={['purple','grey',]}
         style={{...StyleSheet.absoluteFillObject}}
-        end={{x:0.7,y:0.7}}
       />
       {children}
     </View>
